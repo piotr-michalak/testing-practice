@@ -3,7 +3,7 @@ function capitalize(text) {
 }
 
 function reverseString(text) {
-    return [...text].reverse().join("");
+    return [...text].reverse().join('');
 }
 
 const calculator = (a, b) => {
@@ -19,7 +19,19 @@ const calculator = (a, b) => {
 };
 
 function caesarCipher(text, shift) {
-    
+    const encodedText = [...text].map((char) => {
+        let charCode = char.charCodeAt() + shift;
+
+        if (charCode > 'z'.charCodeAt()) {
+            charCode = 'a'.charCodeAt() + (charCode - 'z'.charCodeAt() - 1);
+        } else if (charCode > 'Z'.charCodeAt() && charCode < 'a'.charCodeAt())  {
+            charCode = 'A'.charCodeAt() + (charCode - 'Z'.charCodeAt() - 1);
+        }
+
+        return String.fromCharCode(charCode);
+    });
+
+    return encodedText.join('');
 }
 
 export { capitalize, reverseString, calculator, caesarCipher };

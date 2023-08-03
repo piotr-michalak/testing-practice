@@ -19,3 +19,12 @@ test('Return correct calculation results', () => {
 
     expect(calc.multiply()).toBe(4);
 });
+
+test('Return shifted text', () => {
+    expect(caesarCipher('John', 3)).toBe('Mrkq');
+    
+    expect(caesarCipher('Zohn', 3)).toBe('Crkq');
+
+    expect(caesarCipher('zohn', 3)).toBe('crkq');
+
+});
