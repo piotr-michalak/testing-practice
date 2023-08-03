@@ -34,4 +34,13 @@ function caesarCipher(text, shift) {
     return encodedText.join('');
 }
 
-export { capitalize, reverseString, calculator, caesarCipher };
+function analyzeArray(array) {
+    const arrLen = array.length;
+    const arrAvg = array.reduce((sum, current) => sum + current) / arrLen;
+    const arrMin = Math.min(...array);
+    const arrMax = Math.max(...array);
+
+    return { average: arrAvg, min: arrMin, max: arrMax, length: arrLen };
+}
+
+export { capitalize, reverseString, calculator, caesarCipher, analyzeArray };
